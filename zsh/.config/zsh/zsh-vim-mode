@@ -1,0 +1,30 @@
+bindkey -v
+export KEYTIMEOUT=1
+
+bindkey -a c vi-backward-char
+bindkey -a r vi-forward-char
+bindkey -a t vi-down-line-or-history
+bindkey -a s vi-up-line-or-history
+bindkey -a $ vi-end-of-line
+bindkey -a 0 vi-digit-or-beginning-of-line 
+bindkey -a h vi-change
+bindkey -a H vi-change-eol
+bindkey -a dd vi-change-whole-line
+bindkey -a l vi-replace-chars
+bindkey -a L vi-replace
+bindkey -a k vi-substitute
+
+function zle-keymap-select () {
+    case $KEYMAP in
+        vicmd) echo -ne '\e[1 q';;      # block
+        viins|main) echo -ne '\e[5 q';; # beam
+    esac
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q'
+preexec() { echo -ne '\e[5 q' ;}

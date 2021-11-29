@@ -1,0 +1,18 @@
+autoload -Uz vcs_info
+autoload -Uz colors && colors
+
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
++vi-git-untracked(){
+    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+        git status --porcelain | grep '??' &> /dev/null ; then
+        hook_com[staged]+='!'
+    fi
+}
+zstyle ':vcs_info:git:*' formats $'%K{yellow}\ue0b8%f%m%u%c%F{green} \ue725%f%F{black} (%b) %B%r%f%F{yellow}'
+
+PROMPT=$'%F{green}\ue0b6%f%F{black}%K{green} %n %f%k%F{green}%K{cyan}\ue0b8%f%F{black} %2~ %f%k%F{cyan}${vcs_info_msg_0_}%k%K{white}\ue0b8%f%F{black} %k%f%F{white}\ue0b0%f '

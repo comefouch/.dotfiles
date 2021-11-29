@@ -1,0 +1,7 @@
+alias autoremove="paru -Rcns \$(paru -Qdtq)"
+alias df='df -h'
+alias free='free -m'
+alias grep='grep --color=auto'
+alias ls="exa -al --group-directories-first"
+alias v="nvim"
+alias vim="nvim"

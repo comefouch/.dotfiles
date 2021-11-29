@@ -1,0 +1,42 @@
+-- Directions
+vim.api.nvim_set_keymap('', 'c', 'h', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 't', 'j', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 's', 'k', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'r', 'l', { noremap = true, nowait = true })
+-- Navigation écran
+vim.api.nvim_set_keymap('', 'C', 'H', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'T', 'J', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'S', 'K', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'R', 'L', { noremap = true, nowait = true })
+-- Repli suivant / précédent
+vim.api.nvim_set_keymap('', 'zs', 'zj', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'zt', 'zk', { noremap = true, nowait = true })
+-- CTSR fallbacks
+vim.api.nvim_set_keymap('', 'j', 't', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'J', 'T', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'l', 'c', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'L', 'C', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'h', 'r', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'H', 'R', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'k', 's', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'K', 'S', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', '[k', '[s', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', ']k', ']s', { noremap = true, nowait = true })
+-- Remap w (forward word movement) to é
+vim.api.nvim_set_keymap('', 'é', 'w', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'É', 'W', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('o', 'aé', 'aw', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('o', 'aÉ', 'aW', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('o', 'ié', 'iw', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('o', 'iÉ', 'iW', { noremap = true, nowait = true })
+-- G disambiguation
+vim.api.nvim_set_keymap('', 'gs', 'gk', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'gt', 'gj', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'gb', 'gT', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'gé', 'gt', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'gb', ':exe "silent! tabfirst"<CR>', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'gb', ':exe "silent! tablast"<CR>', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('', 'g"', 'g0', { noremap = true, nowait = true })
+-- Remap useful in normal mode but hard to type in bépo
+vim.api.nvim_set_keymap('n', '.', ':', { noremap = true, nowait = true })
+vim.api.nvim_set_keymap('n', ':', '.', { noremap = true, nowait = true })
