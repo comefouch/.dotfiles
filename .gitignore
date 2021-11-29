@@ -1,8 +1,8 @@
 # zsh
-histfile
-zcompdump
-plugins/*
+zsh/.config/zsh/histfile
+zsh/.config/zsh/zcompdump
+zsh/.config/zsh/plugins/*
 
 # nvim
-undodir/*
-plugin/*
+nvim/.config/nvim/undodir/*
+nvim/.config/nvim/plugin/*
