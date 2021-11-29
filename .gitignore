@@ -1,0 +1,8 @@
+# zsh
+histfile
+zcompdump
+plugins/*
+
+# nvim
+undodir/*
+plugin/*
