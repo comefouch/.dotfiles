@@ -29,7 +29,6 @@ vim.o.inccommand = 'split'
 vim.o.swapfile = false
 vim.o.backup = false
 -- change undodir to keep /home as clean as possible
-vim.o.undodir = '$HOME/.config/nvim/undodir'
 vim.o.undofile = true
 -- scroll offset
 vim.o.scrolloff = 8
