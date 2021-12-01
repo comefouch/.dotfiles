@@ -375,7 +375,7 @@ globalkeys = my_table.join(
               {description = "delete tag", group = "tag"}),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal.." -e tmux new-session -A -s main") end,
+    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = terminal, group = "super"}),
     awful.key({ modkey, "Shift" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
