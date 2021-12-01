@@ -69,8 +69,8 @@ local modkey       = "Mod4"
 local altkey       = "Mod1"
 local modkey1      = "Control"
 
-local browser1          = "librewolf"
-local browser2          = "chromium"
+local browser1          = "chromium"
+local browser2          = "firefox"
 local browser3          = "qutebrowser"
 local editor            = os.getenv("EDITOR") or "vim"
 local editorgui         = "gedit"
@@ -81,7 +81,7 @@ local terminal          = "kitty"
 
 -- awesome variables
 awful.util.terminal = terminal
-awful.util.tagnames = { "", "", "", "", "﯑", "", "", "", "" }
+awful.util.tagnames = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 awful.layout.suit.tile.left.mirror = true
 awful.layout.layouts = {
     awful.layout.suit.tile,

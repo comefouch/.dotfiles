@@ -1,6 +1,6 @@
 # zsh
 zsh/.config/zsh/histfile
-zsh/.config/zsh/zcompdump
+zsh/.config/zsh/.zcompdump
 zsh/.config/zsh/plugins/*
 
 # nvim
