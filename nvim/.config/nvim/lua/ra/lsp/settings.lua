@@ -5,7 +5,6 @@ local presentCmpNvimLsp, cmpNvimLsp = pcall(require, 'cmp_nvim_lsp')
 vim.lsp.set_log_level('error')
 
 local function on_attach(client, bufnr)
-    -- print(client.name)
     remaps.set_default(client, bufnr)
 
     -- adds beatiful icon to completion
@@ -40,18 +39,20 @@ end
 local default_lsp_config = {on_attach = on_attach, capabilities}
 
 local servers = {
-    efm = require('ra.lsp.servers.efm')(),
+    -- efm = require('ra.lsp.servers.efm')(),
     bashls = {},
     yamlls = {},
     jsonls = {},
     tsserver = require('ra.lsp.servers.tsserver')(on_attach),
     html = {},
     cssls = {},
-    sumneko_lua = {},
+    sumneko_lua = require('ra.lsp.servers.sumneko_lua')(),
     dockerls = {},
     omnisharp = {},
     vuels = {},
-    graphql = {}
+    graphql = {},
+    intelephense = {},
+    phpactor = {}
 }
 
 --[[ lsp_installer.on_server_ready(function(server)

@@ -1,4 +1,11 @@
-HISTFILE="$XDG_DATA_HOME/zsh/history"
+mkdir -p $HOME/.local/share
+mkdir -p $HOME/.config
+mkdir -p $HOME/.local/state
+mkdir -p $HOME/.local/state/zsh
+XDG_DATA_HOME=$HOME/.local/share
+XDG_CONFIG_HOMEXDG_CONFIG_HOME=$HOME/.config
+XDG_STATE_HOME=$HOME/.local/state
+HISTFILE=$XDG_STATE_HOME/zsh/history
 HISTSIZE=100000
 SAVEHIST=100000
 export PATH="$HOME/.local/bin":"$HOME/.cargo/bin":$PATH

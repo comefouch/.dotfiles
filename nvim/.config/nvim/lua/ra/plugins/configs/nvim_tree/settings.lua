@@ -77,5 +77,5 @@ require'nvim-tree'.setup {
         auto_resize = false,
         mappings = {custom_only = true, list = list}
     },
-    show_icons = {git = false, folders = true, files = true}
+    show_icons = {git = true, folders = true, files = true}
 }

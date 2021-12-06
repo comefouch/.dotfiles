@@ -79,6 +79,7 @@ return require('packer').startup {
                 require('ra.plugins.configs.autopairs')
             end
         })
+        use({'luochen1990/rainbow', config = function() vim.g.rainbow_active = 1 end})
         -- git
         use {
             'tpope/vim-fugitive',

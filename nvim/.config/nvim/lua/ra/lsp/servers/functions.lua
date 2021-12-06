@@ -15,7 +15,9 @@ M.lsp_install_servers = function()
     installLanguageServer('cssls')
     installLanguageServer('dockerls')
     installLanguageServer('graphql')
-    installLanguageServer('efm')
+    -- installLanguageServer('efm')
+    installLanguageServer('intelephense')
+    installLanguageServer('phpactor')
 end
 
 return M

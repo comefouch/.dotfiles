@@ -1,5 +1,5 @@
 local prettier = {
-    formatCommand = "./node_modules/.bin/prettier --stdin --stdin-filepath ${INPUT}",
+    formatCommand = "prettier --stdin --stdin-filepath ${INPUT}",
     formatStdin = true
 }
 

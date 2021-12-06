@@ -76,7 +76,7 @@ function M.set_default(client, bufnr)
     -- buf_set_keymap('n','<leader>fe', '<cmd>lua vim.diagnostic.set_loclist()<CR>', opts)
     -- buf_set_keymap('n','<leader>fe', '<cmd>:LspDiagnostics 0<CR>', opts)
     buf_set_keymap('n', '<leader>fe',
-                   "<cmd>lua require('lt.lsp.functions').show_diagnostics()<CR>",
+                   "<cmd>lua require('ra.lsp.functions').show_diagnostics()<CR>",
                    'lsp', 'lsp_show_diagnostics', 'Show diagnostics')
     -- buf_set_keymap('n','<leader>fE', '<cmd>lua vim.diagnostic.show_line_diagnostics()<CR>', opts)
     buf_set_keymap('n', '<leader>fE',

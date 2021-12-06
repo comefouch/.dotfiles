@@ -73,7 +73,7 @@ local browser1          = "chromium"
 local browser2          = "firefox"
 local browser3          = "qutebrowser"
 local editor            = os.getenv("EDITOR") or "vim"
-local editorgui         = "gedit"
+local editorgui         = "kitty -e nvim"
 local filemanager       = "thunar"
 local mailclient        = "evolution"
 local mediaplayer       = "env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify"
@@ -623,8 +623,9 @@ root.keys(globalkeys)
 
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
+
 awful.rules.rules = {
-    { rule = { class = "Spotify" },
+    { rule = { class = "spotify" },
       properties = { screen = 1, tag = awful.util.tagnames[8], switchtotag = true  } },
 
     -- All clients will match this rule.
@@ -712,9 +713,6 @@ awful.rules.rules = {
           properties = { maximized = true } },
 
     { rule = { class = "inkscape" },
-          properties = { maximized = true } },
-
-    { rule = { class = mediaplayer },
           properties = { maximized = true } },
 
     { rule = { class = "Vlc" },
@@ -813,6 +811,13 @@ client.connect_signal("manage", function (c)
       and not c.size_hints.program_position then
         -- Prevent clients from being unreachable after screen count changes.
         awful.placement.no_offscreen(c)
+    end
+    if c.class == nil then
+        c.minimized = true
+        c:connect_signal("property::class", function ()
+            c.minimized = false
+            awful.rules.apply(c)
+        end)
     end
 end)
 

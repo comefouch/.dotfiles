@@ -1,11 +1,11 @@
 local lsp = require('lspconfig')
 
 local luaformat = require "ra.lsp.servers.formatters.lua"
--- local prettier = require "lt.lsp.servers.formatters.prettier"
-local prettier_d = require "ra.lsp.servers.formatters.prettier_d"
+local prettier = require "ra.lsp.servers.formatters.prettier"
+-- local prettier_d = require "ra.lsp.servers.formatters.prettier_d"
 local eslint_d = require "ra.lsp.servers.linters.eslint_d"
 
-local formatter = prettier_d
+local formatter = prettier
 local linter = eslint_d
 
 local languages = {
@@ -27,7 +27,7 @@ local languages = {
 
 --[[ local efm_config = os.getenv('HOME') ..
                          '/.config/efm-langserver/config.yaml'
-                         
+
         cmd = {
           bin_path,
           "-c",
@@ -35,7 +35,7 @@ local languages = {
           "-loglevel",
           "10",
           "-logfile",
-          "/tmp/efm.log" 
+          "/tmp/efm.log"
         }, ]]
 
 --[[ local function eslint_config_exists()
@@ -74,6 +74,7 @@ return function()
             -- return lsp.util.root_pattern("package.json", ".git", vim.fn.getcwd())
             -- return getcwd()
             local cwd = lsp.util.root_pattern("tsconfig.json")(fname) or
+                        lsp.util.root_pattern("jsconfig.json")(fname) or
                             lsp.util
                                 .root_pattern(".eslintrc.json", ".git")(fname) or
                             lsp.util

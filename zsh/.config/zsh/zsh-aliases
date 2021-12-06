@@ -1,7 +1,36 @@
 alias autoremove="paru -Rcns \$(paru -Qdtq)"
 alias df='df -h'
 alias free='free -m'
-alias grep='grep --color=auto'
+alias grep='rg --color=auto'
 alias ls="exa -al --group-directories-first"
+
 alias v="nvim"
 alias vim="nvim"
+
+alias dc="docker-compose"
+alias dcr="dc down && dc up -d"
+alias d=docker
+
+alias m=make
+alias mdr="make data_reset_keep"
+alias muf="make update_feed"
+alias mdf="make debug_feed"
+alias mcc="make cache_clear"
+alias msh="make shell"
+alias mc="make console"
+
+alias dsh="dc exec backend sh"
+
+alias g="git"
+alias ga="git add"
+alias gb="git branch"
+alias gd="git diff"
+alias gl="git pull"
+alias gp="git push"
+alias gm="git merge"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gst="git status"
+alias gs="git switch" # WARNING: This overrides the ghostscript utility
+alias gsm="git switch master"
+alias gsd="git switch develop"
