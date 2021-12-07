@@ -1,4 +1,3 @@
-config.load_autoconfig(False)
 c.tabs.show = "multiple"
 c.statusbar.show = "in-mode"
 c.url.start_pages = "https://www.startpage.com"

@@ -1,15 +1,14 @@
 -- disable netrw
-vim.g.loaded_netrw = 1
+vim.g.loaded_netrw = 1 -- disable default file explorer
 vim.g.loaded_netrwPlugin = 1
 vim.o.showmatch = true
--- vim.o.nohlsearch
 vim.o.hidden = true
 vim.o.errorbells = false
 -- timeout duration
-vim.o.timeoutlen = 2000
+vim.o.timeoutlen = 1300 -- increase timeoutlens temporarily, because I need to learn
 -- linenumbering
 vim.o.number = true
-vim.o.numberwidth = 2
+vim.o.numberwidth = 2 -- do not need 4 with relativenumber
 vim.o.relativenumber = true
 vim.o.mouse = 'a'
 -- indentation and line wrap
@@ -25,10 +24,7 @@ vim.o.smartcase = true
 vim.o.incsearch = true
 -- live preview of substitutions
 vim.o.inccommand = 'split'
--- disble swapfile and backup
-vim.o.swapfile = false
-vim.o.backup = false
--- change undodir to keep /home as clean as possible
+-- undofile is great
 vim.o.undofile = true
 -- scroll offset
 vim.o.scrolloff = 8
@@ -55,4 +51,5 @@ vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
 -- shows spaces
 vim.o.list = true
-vim.o.listchars = 'eol:¬,tab:>·,trail:~,extends:>,precedes:<'
+-- I like to see end of line, trailing spaces, and other invinsible characters
+vim.o.listchars = 'eol:¬,tab:>·,trail:~,extends:>,precedes:<,nbsp:·'
