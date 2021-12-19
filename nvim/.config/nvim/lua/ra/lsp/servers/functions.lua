@@ -18,6 +18,7 @@ M.lsp_install_servers = function()
     -- installLanguageServer('efm')
     installLanguageServer('intelephense')
     installLanguageServer('phpactor')
+    installLanguageServer('svelte')
 end
 
 return M

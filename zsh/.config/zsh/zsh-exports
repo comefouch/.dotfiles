@@ -13,3 +13,5 @@ export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 export GO111MODULE=on
 export CHROME_BIN='chromium-browser'
+export SPICETIFY_INSTALL="/home/come/spicetify-cli"
+export PATH="$SPICETIFY_INSTALL:$PATH"

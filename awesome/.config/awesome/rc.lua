@@ -53,10 +53,10 @@ end
 run_once({ "unclutter -root" })
 
 local themes = {
-    "multicolor",		-- 1
-    "powerarrow",      		-- 2
-    "powerarrow-blue",	 	-- 3
-    "blackburn",		-- 4
+    "multicolor",        -- 1
+    "powerarrow",              -- 2
+    "powerarrow-blue",         -- 3
+    "blackburn",        -- 4
 }
 
 -- choose your theme here
@@ -74,8 +74,7 @@ local browser2          = "firefox"
 local browser3          = "qutebrowser"
 local editor            = os.getenv("EDITOR") or "vim"
 local editorgui         = "kitty -e nvim"
-local filemanager       = "thunar"
-local mailclient        = "evolution"
+local filemanager       = "nemo"
 local mediaplayer       = "env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify"
 local terminal          = "kitty"
 
@@ -166,14 +165,14 @@ awful.screen.connect_for_each_screen(function(s) beautiful.at_screen_connect(s)
 
 globalkeys = my_table.join(
     -- application shortcuts
-    awful.key({ modkey }, "b", function () awful.util.spawn( browser1 ) end,
+    awful.key({ modkey }, "b", function () awful.spawn( browser1 ) end,
         {description = browser1, group = "application shortcuts"}),
-    awful.key({ modkey, "Shift" }, "b", function () awful.util.spawn( browser3 ) end,
+    awful.key({ modkey, "Shift" }, "b", function () awful.spawn( browser3 ) end,
         {description = browser3, group = "application shortcuts"}),
     -- rofi
     awful.key({ modkey   }, "space",
     function ()
-	awful.spawn("rofi -show run")
+    awful.spawn("rofi -show run")
     end,
     {description = "show rofi", group = "hotkeys"}),
     awful.key({ modkey   }, "p", function() awful.spawn.with_shell("$HOME/.config/awesome/scripts/picom-toggle.sh") end,
@@ -182,87 +181,57 @@ globalkeys = my_table.join(
 
 
 
-    -- super + ... function keys
-    awful.key({ modkey }, "F1", function () awful.util.spawn( browser1 ) end,
-        {description = browser1, group = "function keys"}),
-    awful.key({ modkey }, "F2", function () awful.util.spawn( editorgui ) end,
-        {description = editorgui , group = "function keys" }),
-    awful.key({ modkey }, "F3", function () awful.util.spawn( "inkscape" ) end,
-        {description = "inkscape" ,group = "function keys" }),
-    awful.key({ modkey }, "F4", function () awful.util.spawn( "gimp" ) end,
-        {description = "gimp" , group = "function keys" }),
-    awful.key({ modkey }, "F5", function () awful.util.spawn( "meld" ) end,
-        {description = "meld" , group = "function keys" }),
-    awful.key({ modkey }, "F6", function () awful.util.spawn( "vlc --video-on-top" ) end,
-        {description = "vlc" , group = "function keys" }),
-    awful.key({ modkey }, "F7", function () awful.util.spawn( "virtualbox" ) end,
-        {description = virtualmachine , group = "function keys" }),
-    awful.key({ modkey }, "F8", function () awful.util.spawn( filemanager ) end,
-        {description = filemanager , group = "function keys" }),
-    awful.key({ modkey }, "F9", function () awful.util.spawn( mailclient ) end,
-        {description = mailclient , group = "function keys" }),
-    awful.key({ modkey }, "F10", function () awful.util.spawn( mediaplayer ) end,
-        {description = mediaplayer , group = "function keys" }),
-    awful.key({ modkey }, "F11", function () awful.util.spawn( "rofi -show run -fullscreen" ) end,
-        {description = "rofi fullscreen" , group = "function keys" }),
-    awful.key({ modkey }, "F12", function () awful.util.spawn( "rofi -show run" ) end,
-        {description = "rofi" , group = "function keys" }),
-
     -- super + ...
-    awful.key({ modkey }, "e", function () awful.util.spawn( editorgui ) end,
+    awful.key({ modkey }, "e", function () awful.spawn( editorgui ) end,
         {description = "run gui editor", group = "super"}),
-    awful.key({ modkey }, "x",  function () awful.util.spawn( "arcolinux-logout" ) end,
+    awful.key({ modkey }, "x",  function () awful.spawn( "arcolinux-logout" ) end,
       {description = "exit", group = "hotkeys"}),
 
     -- super + shift + ...
-    awful.key({ modkey, "Shift"   }, "Return", function() awful.util.spawn( filemanager ) end),
+    awful.key({ modkey, "Shift"   }, "Return", function() awful.spawn( filemanager ) end),
 
     -- ctrl+alt +  ...
-    awful.key({ modkey1, altkey   }, "w", function() awful.util.spawn( "arcolinux-welcome-app" ) end,
+    awful.key({ modkey1, altkey   }, "w", function() awful.spawn( "arcolinux-welcome-app" ) end,
         {description = "ArcoLinux Welcome App", group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "e", function() awful.util.spawn( "arcolinux-tweak-tool" ) end,
+    awful.key({ modkey1, altkey   }, "e", function() awful.spawn( "arcolinux-tweak-tool" ) end,
         {description = "ArcoLinux Tweak Tool", group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "Next", function() awful.util.spawn( "conky-rotate -n" ) end,
+    awful.key({ modkey1, altkey   }, "Next", function() awful.spawn( "conky-rotate -n" ) end,
         {description = "Next conky rotation", group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "Prior", function() awful.util.spawn( "conky-rotate -p" ) end,
+    awful.key({ modkey1, altkey   }, "Prior", function() awful.spawn( "conky-rotate -p" ) end,
         {description = "Previous conky rotation", group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "a", function() awful.util.spawn( "xfce4-appfinder" ) end,
+    awful.key({ modkey1, altkey   }, "a", function() awful.spawn( "xfce4-appfinder" ) end,
         {description = "Xfce appfinder", group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "b", function() awful.util.spawn( filemanager ) end,
+    awful.key({ modkey1, altkey   }, "b", function() awful.spawn( filemanager ) end,
         {description = filemanager, group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "c", function() awful.util.spawn("catfish") end,
-        {description = "catfish", group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "f", function() awful.util.spawn( browser2 ) end,
+    awful.key({ modkey1, altkey   }, "f", function() awful.spawn( browser2 ) end,
         {description = browser2, group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "g", function() awful.util.spawn( browser3 ) end,
+    awful.key({ modkey1, altkey   }, "g", function() awful.spawn( browser3 ) end,
         {description = browser3, group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "i", function() awful.util.spawn("nitrogen") end,
-        {description = nitrogen, group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "k", function() awful.util.spawn( "arcolinux-logout" ) end,
+    awful.key({ modkey1, altkey   }, "k", function() awful.spawn( "arcolinux-logout" ) end,
         {description = scrlocker, group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "l", function() awful.util.spawn( "arcolinux-logout" ) end,
+    awful.key({ modkey1, altkey   }, "l", function() awful.spawn( "arcolinux-logout" ) end,
         {description = scrlocker, group = "alt+ctrl"}),
-    awful.key({ modkey }, "v", function() awful.util.spawn( mediaplayer ) end,
+    awful.key({ modkey }, "v", function() awful.spawn( mediaplayer ) end,
         {description = mediaplayer}),
-    awful.key({ modkey1, altkey   }, "t", function() awful.util.spawn( terminal ) end,
+    awful.key({ modkey1, altkey   }, "t", function() awful.spawn( terminal ) end,
         {description = terminal, group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "u", function() awful.util.spawn( "pavucontrol" ) end,
+    awful.key({ modkey1, altkey   }, "u", function() awful.spawn( "pavucontrol" ) end,
         {description = "pulseaudio control", group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "v", function() awful.util.spawn( browser1 ) end,
+    awful.key({ modkey1, altkey   }, "v", function() awful.spawn( browser1 ) end,
         {description = browser1, group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "Return", function() awful.util.spawn(terminal) end,
+    awful.key({ modkey1, altkey   }, "Return", function() awful.spawn(terminal) end,
         {description = terminal, group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "m", function() awful.util.spawn( "xfce4-settings-manager" ) end,
+    awful.key({ modkey1, altkey   }, "m", function() awful.spawn( "xfce4-settings-manager" ) end,
         {description = "Xfce settings manager", group = "alt+ctrl"}),
-    awful.key({ modkey1, altkey   }, "p", function() awful.util.spawn( "pamac-manager" ) end,
+    awful.key({ modkey1, altkey   }, "p", function() awful.spawn( "pamac-manager" ) end,
         {description = "Pamac Manager", group = "alt+ctrl"}),
 
     -- screenshots
-    awful.key({ }, "Print", function () awful.util.spawn("scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'") end,
+    awful.key({ }, "Print", function () awful.spawn("scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'") end,
         {description = "Scrot", group = "screenshots"}),
-    awful.key({ modkey1           }, "Print", function () awful.util.spawn( "xfce4-screenshooter" ) end,
+    awful.key({ modkey1           }, "Print", function () awful.spawn( "xfce4-screenshooter" ) end,
         {description = "Xfce screenshot", group = "screenshots"}),
-    awful.key({ modkey1, "Shift"  }, "Print", function() awful.util.spawn("gnome-screenshot -i") end,
+    awful.key({ modkey1, "Shift"  }, "Print", function() awful.spawn("gnome-screenshot -i") end,
         {description = "Gnome screenshot", group = "screenshots"}),
 
     -- Personal keybindings}}}
@@ -379,7 +348,7 @@ globalkeys = my_table.join(
               {description = terminal, group = "super"}),
     awful.key({ modkey, "Shift" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "x", function () awful.util.spawn("/home/richardalmee/.bin/toggle-touchpad") end,
+    awful.key({ modkey, "Shift"   }, "x", function () awful.spawn("/home/richardalmee/.bin/toggle-touchpad") end,
               {description = "toggle touchpad", group = "utils"}),
 
     awful.key({ altkey, "Shift"   }, "l",     function () awful.tag.incmwfact( 0.05)          end,
@@ -454,16 +423,16 @@ globalkeys = my_table.join(
         end),
 
     --Media keys supported by vlc, spotify, audacious, xmm2, ...
-    --awful.key({}, "XF86AudioPlay", function() awful.util.spawn("playerctl play-pause", false) end),
-    --awful.key({}, "XF86AudioNext", function() awful.util.spawn("playerctl next", false) end),
-    --awful.key({}, "XF86AudioPrev", function() awful.util.spawn("playerctl previous", false) end),
-    --awful.key({}, "XF86AudioStop", function() awful.util.spawn("playerctl stop", false) end),
+    --awful.key({}, "XF86AudioPlay", function() awful.spawn("playerctl play-pause", false) end),
+    --awful.key({}, "XF86AudioNext", function() awful.spawn("playerctl next", false) end),
+    --awful.key({}, "XF86AudioPrev", function() awful.spawn("playerctl previous", false) end),
+    --awful.key({}, "XF86AudioStop", function() awful.spawn("playerctl stop", false) end),
 
 --Media keys supported by mpd.
-    awful.key({}, "XF86AudioPlay", function () awful.util.spawn("mpc toggle") end),
-    awful.key({}, "XF86AudioNext", function () awful.util.spawn("mpc next") end),
-    awful.key({}, "XF86AudioPrev", function () awful.util.spawn("mpc prev") end),
-    awful.key({}, "XF86AudioStop", function () awful.util.spawn("mpc stop") end),
+    awful.key({}, "XF86AudioPlay", function () awful.spawn("mpc toggle") end),
+    awful.key({}, "XF86AudioNext", function () awful.spawn("mpc next") end),
+    awful.key({}, "XF86AudioPrev", function () awful.spawn("mpc prev") end),
+    awful.key({}, "XF86AudioStop", function () awful.spawn("mpc stop") end),
 
     -- MPD control
     awful.key({ modkey1, "Shift" }, "Up",
@@ -534,6 +503,12 @@ clientkeys = my_table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
+    awful.key({ modkey,           }, "m",
+        function (c)
+            c.maximized = not c.maximized
+            c:raise()
+        end ,
+        {description = "(un)maximize", group = "client"}),
     awful.key({ modkey, },           "q",      function (c) c:kill()                         end,
               {description = "close", group = "hotkeys"}),
     awful.key({ modkey, "Shift" }, "f",  awful.client.floating.toggle                     ,
@@ -625,8 +600,8 @@ root.keys(globalkeys)
 -- Rules to apply to new clients (through the "manage" signal).
 
 awful.rules.rules = {
-    { rule = { class = "spotify" },
-      properties = { screen = 1, tag = awful.util.tagnames[8], switchtotag = true  } },
+    { rule = { class = "Spotify" },
+      properties = { screen = 1, tag = awful.util.tagnames[9], switchtotag = true  } },
 
     -- All clients will match this rule.
     { rule = { },
@@ -638,7 +613,10 @@ awful.rules.rules = {
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen,
-                     size_hints_honor = false
+                     size_hints_honor = false,
+                     maximized_horizontal = false,
+                     maximized_vertical = false,
+                     maximized = false
      }
     },
 
@@ -787,15 +765,15 @@ awful.rules.rules = {
 
           -- Floating clients but centered in screen
     { rule_any = {
-       	class = {
-       		"Polkit-gnome-authentication-agent-1",
-			"Arcolinux-calamares-tool.py"
-				},
-				},
-      	properties = { floating = true },
-	      	callback = function (c)
-    		  awful.placement.centered(c,nil)
-       		end }
+           class = {
+               "Polkit-gnome-authentication-agent-1",
+            "Arcolinux-calamares-tool.py"
+                },
+                },
+          properties = { floating = true },
+              callback = function (c)
+              awful.placement.centered(c,nil)
+               end }
 }
 -- }}}
 

@@ -21,7 +21,6 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] =
     vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
         virtual_text = {spacing = 0, prefix = '■'},
 
-        -- see: ":help vim.lsp.diagnostic.set_signs()"
         signs = true,
 
         update_in_insert = false
@@ -52,7 +51,8 @@ local servers = {
     vuels = {},
     graphql = {},
     intelephense = {},
-    phpactor = {}
+    phpactor = {},
+    svelte = {}
 }
 
 --[[ lsp_installer.on_server_ready(function(server)
