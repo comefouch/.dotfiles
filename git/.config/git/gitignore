@@ -1,0 +1,5 @@
+jsconfig.json
+tsconfig.json
+.flowconfig
+.prettierrc
+.php-cs-fixer.php

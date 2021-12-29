@@ -1,5 +1,3 @@
-vim.cmd('colorscheme gruvbox')
-
 vim.o.termguicolors = true
 vim.o.background = 'dark'
 
@@ -11,3 +9,5 @@ vim.g.gruvbox_invert_tabline = true
 
 vim.cmd('highlight ColorColumn ctermbg=0 guibg=lightgrey')
 vim.cmd('highlight SignColumn guibg=#282828')
+
+vim.cmd('colorscheme gruvbox')

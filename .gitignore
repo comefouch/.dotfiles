@@ -6,3 +6,10 @@ zsh/.config/zsh/plugins/*
 # nvim
 nvim/.config/nvim/undodir/*
 nvim/.config/nvim/plugin/*
+
+# qutebrowser
+qutebrowser/.config/qutebrowser/bookmarks
+qutebrowser/.config/qutebrowser/quickmarks
+
+# bpytop
+bpytop/.config/bpytop/error.log

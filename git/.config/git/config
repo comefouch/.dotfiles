@@ -1,0 +1,7 @@
+[user]
+    email = c.delafouchardiere@otaree.com
+    name = come
+[push]
+    default = current
+[core]
+    excludesFile = ~/.config/git/gitignore

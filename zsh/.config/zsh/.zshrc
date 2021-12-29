@@ -1,4 +1,4 @@
-source "$HOME/.cargo/env"
+# source "$HOME/.cargo/env"
 
 
 setopt autocd extendedglob nomatch menucomplete
