@@ -3,3 +3,6 @@ tsconfig.json
 .flowconfig
 .prettierrc
 .php-cs-fixer.php
+.idea/
+watcherTasks.xml
+.idea/watcherTasks.xml
