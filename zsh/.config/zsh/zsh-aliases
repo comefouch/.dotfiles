@@ -8,7 +8,9 @@ alias v="nvim"
 alias vim="nvim"
 
 alias dc="docker-compose"
-alias dcr="dc down && dc up -d"
+alias dcr="dc down --remove-orphans && dc up -d"
+alias dcu="dc up -d"
+alias dcd="dc down --remove-orphans"
 alias d=docker
 
 alias m=make
@@ -18,6 +20,9 @@ alias mdf="make debug_feed"
 alias mcc="make cache_clear"
 alias msh="make shell"
 alias mc="make console"
+alias mtp="make test_back_prepare"
+alias mt="make test_back"
+alias mtf="make test_back_filter"
 
 alias dsh="dc exec backend sh"
 
@@ -30,7 +35,20 @@ alias gp="git push"
 alias gm="git merge"
 alias gc="git commit"
 alias gcm="git commit -m"
+alias gch="git diff | rg 'console|dump'"
 alias gst="git status"
 alias gs="git switch" # WARNING: This overrides the ghostscript utility
+alias gsi="git branch | fzf | xargs git switch"
 alias gsm="git switch master"
 alias gsd="git switch develop"
+alias gh="git stash"
+alias gha="git stash apply"
+
+alias k=kubectl
+alias kp='aws eks update-kubeconfig --name efficimo-production'
+alias kpp='kp && k config set-context --current --namespace=otaree-production'
+alias ks='aws eks update-kubeconfig --name efficimo-staging'
+alias ksd='ks && k config set-context --current --namespace=otaree-demo'
+alias kss='ks && k config set-context --current --namespace=otaree-staging'
+
+eval $(thefuck --alias)

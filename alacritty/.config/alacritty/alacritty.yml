@@ -23,4 +23,8 @@ colors:
   indexed_colors:
     - { index: 16, color: '0xff9e64' }
     - { index: 17, color: '0xdb4b4b' }
-startup_mode: Maximized
+window:
+  startup_mode: Maximized
+  opacity: 0.95
+font:
+  size: 12

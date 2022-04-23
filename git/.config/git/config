@@ -5,3 +5,9 @@
     default = current
 [core]
     excludesFile = ~/.config/git/gitignore
+[credential "https://gitlab.efficimo.network"]
+	helper = 
+	helper = !/usr/bin/glab auth git-credential
+[credential "http://gitlab.efficimo.network"]
+	helper = 
+	helper = !/usr/bin/glab auth git-credential
