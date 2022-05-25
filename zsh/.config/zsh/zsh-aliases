@@ -31,18 +31,20 @@ alias ga="git add"
 alias gb="git branch"
 alias gd="git diff"
 alias gl="git pull"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gp="git push"
 alias gm="git merge"
 alias gc="git commit"
 alias gcm="git commit -m"
 alias gch="git diff | rg 'console|dump'"
-alias gst="git status"
+alias gst="git status -sb"
 alias gs="git switch" # WARNING: This overrides the ghostscript utility
 alias gsi="git branch | fzf | xargs git switch"
 alias gsm="git switch master"
 alias gsd="git switch develop"
 alias gh="git stash"
 alias gha="git stash apply"
+alias ghl="git stash list"
 
 alias k=kubectl
 alias kp='aws eks update-kubeconfig --name efficimo-production'

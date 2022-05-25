@@ -49,7 +49,8 @@ local servers = {
     dockerls = {},
     intelephense = {},
     phpactor = {},
-    svelte = {}
+    svelte = {},
+    rust_analyzer = {}
 }
 
 for serverName, config in pairs(servers) do

@@ -63,7 +63,14 @@ return require('packer').startup(function(use)
     use({'hrsh7th/cmp-path', after = 'nvim-cmp'})
     use({'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp'})
 
-    -- renamer
+    -- refactoring
+    use {
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+            {"nvim-lua/plenary.nvim"},
+            {"nvim-treesitter/nvim-treesitter"}
+        }
+    }
     use {
         'filipdutescu/renamer.nvim',
         requires = {{'nvim-lua/plenary.nvim'}},
