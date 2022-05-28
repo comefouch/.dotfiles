@@ -36,7 +36,7 @@ alias gp="git push"
 alias gm="git merge"
 alias gc="git commit"
 alias gcm="git commit -m"
-alias gch="git diff | rg 'console|dump'"
+alias gch="git diff | rg 'console|dump|echo'"
 alias gst="git status -sb"
 alias gs="git switch" # WARNING: This overrides the ghostscript utility
 alias gsi="git branch | fzf | xargs git switch"
@@ -52,5 +52,7 @@ alias kpp='kp && k config set-context --current --namespace=otaree-production'
 alias ks='aws eks update-kubeconfig --name efficimo-staging'
 alias ksd='ks && k config set-context --current --namespace=otaree-demo'
 alias kss='ks && k config set-context --current --namespace=otaree-staging'
+
+alias psmem='ps auxf | sort -nr -k 4 | head -5'
 
 eval $(thefuck --alias)
