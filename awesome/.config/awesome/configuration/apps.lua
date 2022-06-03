@@ -8,15 +8,15 @@ return {
 		-- Default terminal emulator
 		terminal = "kitty",
 		-- Defalut music client
-		music_player = "kitty --class music -e ncmpcpp",
+		music_player = "sh -c \"env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify\"",
 		-- Default text editor
 		text_editor = "kitty -e nvim",
 		-- Default code editor
 		code_editor = "code",
 		-- Default web browser
-		web_browser = "chromium",
+		web_browser = "chromium --profile-directory=\"Default\"",
         -- Secondary web browser
-        secondary_web_browser = "chromium",
+        secondary_web_browser = "chromium --profile-directory=\"Profile 1\"",
         -- Tertiary web browser
         tertiary_web_browser = "qutebrowser",
 		-- Default file manager
@@ -52,9 +52,11 @@ return {
 	-- List of binaries/shell scripts that will execute for a certain task
 	utils = {
 		-- Fullscreen screenshot
-		full_screenshot = utils_dir .. "screensht full",
+		-- full_screenshot = utils_dir .. "screensht full",
+        full_screenshot = "flameshot screen",
 		-- Area screenshot
-		area_screenshot = utils_dir .. "screensht area",
+		-- area_screenshot = utils_dir .. "screensht area",
+        area_screenshot = "flameshot gui",
 		-- Color Picker
 		color_picker = utils_dir .. "xcolor-pick",
 	},

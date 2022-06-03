@@ -142,7 +142,7 @@ awful.keyboard.append_global_keybindings({
 	end, { description = "take a area screenshot", group = "hotkeys" }),
 
 	-- Lockscreen
-	awful.key({ modkey, ctrl }, "l", function()
+	awful.key({ modkey }, "l", function()
 		lock_screen_show()
 	end, { description = "lock screen", group = "hotkeys" }),
 
@@ -160,7 +160,7 @@ awful.keyboard.append_global_keybindings({
 	awful.key({ modkey, shift }, "d", function()
 		dashboard:toggle()
 	end, { description = "toggle dashboard", group = "awesome" }),
-	awful.key({ modkey }, "grave", function()
+	awful.key({ modkey }, "v", function()
 		awful.spawn.with_shell(apps.default.music_player)
 	end, { description = "open music client", group = "awesome" }),
 })

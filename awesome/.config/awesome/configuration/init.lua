@@ -44,9 +44,11 @@ client.connect_signal("request::manage", function(c)
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
+--[[
 client.connect_signal("mouse::enter", function(c)
 	c:emit_signal("request::activate", "mouse_enter", { raise = false })
 end)
+]]
 
 -- Hide all windows when a splash is shown
 awesome.connect_signal("widgets::splash::visibility", function(vis)
@@ -93,7 +95,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 	-- Screen padding
 	screen[s].padding = { top = dpi(3), left = dpi(3), right = dpi(3) }
 	-- -- Each screen has its own tag table.
-	awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
+	awful.tag({ "1", "2", "3", "4", "5", "6" , "7", "8", "9"}, s, awful.layout.layouts[1])
 end)
 
 -- Helper function to be used by decoration themes to enable client rounding
