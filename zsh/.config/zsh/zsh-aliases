@@ -1,8 +1,10 @@
+alias zo="cd $HOME/Documents/Dev/otaree/"
 alias autoremove="paru -Rcns \$(paru -Qdtq)"
 alias df='df -h'
 alias free='free -m'
 alias grep='rg --color=auto'
-alias ls="exa -al --group-directories-first"
+alias ls="exa -a --group-directories-first"
+alias cat="bat"
 
 alias v="nvim"
 alias vim="nvim"
@@ -39,7 +41,12 @@ alias gcm="git commit -m"
 alias gch="git diff | rg 'console|dump|echo'"
 alias gst="git status -sb"
 alias gs="git switch" # WARNING: This overrides the ghostscript utility
-alias gsi="git branch | fzf | xargs git switch"
+gsi() {
+  local branches branch
+  branches=$(git branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git switch $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
 alias gsm="git switch master"
 alias gsd="git switch develop"
 alias gh="git stash"
@@ -47,11 +54,7 @@ alias gha="git stash apply"
 alias ghl="git stash list"
 
 alias k=kubectl
-alias kp='aws eks update-kubeconfig --name efficimo-production'
-alias kpp='kp && k config set-context --current --namespace=otaree-production'
-alias ks='aws eks update-kubeconfig --name efficimo-staging'
-alias ksd='ks && k config set-context --current --namespace=otaree-demo'
-alias kss='ks && k config set-context --current --namespace=otaree-staging'
+source ./zsh-uncommited
 
 alias psmem='ps auxf | sort -nr -k 4 | head -5'
 

@@ -15,7 +15,8 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim',
         requires = {
-            {'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'},
+            {'nvim-lua/popup.nvim'},
+            {'nvim-lua/plenary.nvim'},
             {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
         },
         config = function() require 'ka.plugins.configs.telescope' end
@@ -43,6 +44,10 @@ return require('packer').startup(function(use)
     use {'onsails/lspkind-nvim', after = 'nvim-lspconfig'} -- icons
     use {'ray-x/lsp_signature.nvim', after = 'nvim-lspconfig'} -- help on function signature
     use {'jose-elias-alvarez/nvim-lsp-ts-utils', after = 'nvim-lspconfig'} -- typescript utils
+
+    -- debugging
+    use 'mfussenegger/nvim-dap'
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
     -- snippets
     use {
@@ -73,7 +78,7 @@ return require('packer').startup(function(use)
     }
     use {
         'filipdutescu/renamer.nvim',
-        requires = {{'nvim-lua/plenary.nvim'}},
+        requires = {'nvim-lua/plenary.nvim'},
         config = function() require('ka.plugins.configs.renamer') end
     }
 

@@ -47,6 +47,8 @@ return {
 		"mpDris2",
 		-- Polkit and keyring
 		"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &",
+        -- Keyboard config
+        "setxkbmap -option caps:swapescap"
 	},
 
 	-- List of binaries/shell scripts that will execute for a certain task

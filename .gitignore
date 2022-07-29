@@ -2,6 +2,7 @@
 zsh/.config/zsh/histfile
 zsh/.config/zsh/.zcompdump
 zsh/.config/zsh/plugins/*
+zsh/.config/zsh/zsh-uncommited
 
 # nvim
 nvim/.config/nvim/undodir/*
